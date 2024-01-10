@@ -1,17 +1,3 @@
-// Variable in JS
-    ▶️ var
-    ▶️ let
-    ▶️ const
-
-        -- var is function scoped
-        -- let is braces scoped
-        -- var creates Variable in window object
-
-        /*
-        Prefer not use var
-        because of issue in block scope and functional scope
-        */
-
 "use strict"; // treat all JS code as newer version
 
 //alert( 2 + 2 )    //  we are using nodejs, not browser
@@ -19,7 +5,11 @@
 //code readability should be high
 
 
-// -----------Primitive Data Types 
+let name = "Akhil";
+let age = 23;
+let isLoggedIn = false;
+
+        // -----------Primitive Data Types 
 // number => 
 // bigInt
 // string => ""

@@ -12,6 +12,10 @@
         because of issue in block scope and functional scope
         */
 
+
+*  URL for js specification or standard
+        ▶️ https://tc39.es/ecma262/ //original javascript specification
+        ▶️ https://developer.mozilla.org/en-US/docs/Web/JavaScript
 "use strict"; // treat all JS code as newer version
 
 //alert( 2 + 2 )    //  we are using nodejs, not browser

@@ -24,13 +24,14 @@
 
 
 // -----------Primitive Data Types 
-// number => 
+// number => // NaN, 34
 // bigInt
 // string => ""
 // boolean => true/false    
 // null => standalone value
 // undefined => value is not assigned but declared
 // symbol => unique
+
 
         // -----------Reference data types
 

@@ -53,9 +53,33 @@ const users = [
     }
 ];
 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('isLogged'));
+// console.log(tinderUser.hasOwnProperty('isLogged'));
+
+
+
+//Destructuring
+
+const course = {
+    courseName: "js in hindi",
+    coursePrice: "999",
+    courseInstructor: "hitesh"
+}
+
+const {courseInstructor} = course;
+const {courseInstructor: instructor} = course;  
+
+// console.log(courseInstructor);
+console.log(instructor)
+
+//JSON
+
+// {
+//     "name": "akhil", 
+//     "courseName": "js in hindi",
+//     "price": "free"
+// }

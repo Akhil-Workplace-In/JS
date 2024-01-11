@@ -39,3 +39,22 @@
 
 console.log(typeof null); //object  
 console.log(typeof undefined); // undefined 
+
+
+▶️▶️▶️▶️ How does javascript work behind the scene
+
+        JavaScript Execution context
+        [       ]
+        [  {}   ] => Global Execution context
+        [       ]
+                 => function execution context
+                 => eval execution context
+
+                       -- browser => window object
+                       -- nodejs environment => {}
+
+
+===============> Execution Phase
+        1> Global execution (this)
+        2> Memory phase (variable creation, storing)       
+        3> Execution Phase     

@@ -12,5 +12,25 @@ const arr = [];
 const obj = {};
 
 if(Object.keys(obj).length === 0){
-    console.log("Object is empty");
+    // console.log("Object is empty");
 }
+
+
+//Nullish Coalescing Operator (??) null , undefined
+
+let val1;
+// val1 = 5 ?? 10;
+
+// val1 = null ?? 10;
+
+// val1 = undefined ??  15
+
+// val1 = null ?? 10 ?? 20;
+// console.log(val1)
+
+// Ternary operator
+
+// condition ? true(true statement) : false 
+
+const iceTeaPrice = 100;
+iceTeaPrice >= 80 ? console.log("greater than 80") : console.log("less than 80");

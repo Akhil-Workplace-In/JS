@@ -1,0 +1,5 @@
+// DOM element selection
+
+document.querySelector('.className, #id, .className:first-child, .className:last-child, .className:nth-child(5 or even or odd)');
+
+if ther is html collection list => Array.from()

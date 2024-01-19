@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01_style.css" type="text/css">
+</head>
+<body>
+    <div class="card">
+        <div class="innerCard" id="userDisplayCard"></div>
+        <form>
+            <input type="text" id="query"/>
+            <button type="submit" id="requestButton">Make github request</button>
+        </form>
+        
+    </div>
+   
+</body>
+<script>
+    
+    let userDatas = {};
+    
+    const requestButton = document.getElementById('requestButton');
+    requestButton.addEventListener('click', function(e){
+        e.preventDefault()
+        let query = document.getElementById('query').value;
+        console.log(query)
+        // let userDisplayCard = document.getElementById('userDisplayCard'); 
+        // let userData = document.getElementById('userData');
+        // userData.replaceWith(userData)  
+        const userRequestUrl = `https://api.github.com/users/${query}`; 
+        makeXMLHttpRequest(userRequestUrl);
+
+    })         
+
+   function makeXMLHttpRequest(userRequestUrl){
+        let userData = {};
+        const requestUrl = userRequestUrl;        
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);        
+        xhr.onreadystatechange = function(){
+            
+            // console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                 const data = JSON.parse(this.responseText);
+                //  console.log(data);                
+                    userData.userName = data.login,
+                    userData.userPhoto = data.avatar_url,
+                    userData.followers = data.followers
+                    createCard(userData);
+                //   
+                              
+            }
+        }        
+        xhr.send()
+        userDatas = userData;
+        // console.log(userData);
+        
+    }
+
+    //Creates new div element in DOM 
+    function createCard(userData){        
+        const div = document.createElement('div');
+        div.setAttribute('id', 'userData');
+        div.setAttribute('class', 'userData');        
+        div.innerHTML = `
+            <div>
+                <img id="userPhoto" src="${userData.userPhoto}" alt="userPhoto" width="300" height="300" style="border-radius: 50%"/>
+            </div>
+            <div style="margin-top: 15px;">
+                <h4>${userData.userName}</h4>
+            </div>               
+            
+        `
+        let userDisplayCard = document.getElementById('userDisplayCard');
+        userDisplayCard.appendChild(div);
+        // userDisplayCard.removeChild(div);
+        // userDisplayCard.replaceWith(div);        
+        
+    }
+
+
+
+    
+    
+</script>
+
+</html>
